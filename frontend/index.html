@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script type="module" src="index.js"></script>
+  <title>Сервис управления мастерами</title>
+</head>
+<body>
+  <header class="app-header" id="app-header">
+    <h1 class="app-header__app-name">👨‍🔧 Управление мастерами</h1>
+  </header>
+
+  <main class="app-main" id="app-main">
+    <ul class="technicians-list">
+      <li class="technicians-list__item technician-adder">
+        <button type="button" class="technician-adder__btn">
+          ➕ Добавить мастера
+        </button>
+        <input
+          type="text"
+          placeholder="Новый мастер"
+          class="technician-adder__input"
+        />
+      </li>
+    </ul>
+  </main>
+
+  <dialog class="app-modal" id="modal-add-technician">
+    <form class="app-modal__form">
+      <label for="modal-add-technician-input" class="app-modal__question">
+        🛠️ Введите имя нового мастера:
+      </label>
+      <input type="text" class="app-modal__input" id="modal-add-technician-input"/> 
+      <div class="app-modal__controls">
+        <button type="button" class="app-modal__btn modal-ok-btn">ОК</button>
+        <button type="button" class="app-modal__btn modal-cancel-btn">Отмена</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="app-modal" id="modal-add-request">
+    <form class="app-modal__form">
+      <label for="modal-add-request-address" class="app-modal__question">
+        📍 Введите адрес заявки:
+      </label>
+      <input type="text" id="modal-add-request-address" placeholder="Адрес" class="app-modal__input"/>
+
+      <label for="modal-add-request-complexity" class="app-modal__question">
+        ⚙️ Выберите сложность заявки:
+      </label>
+      <select id="modal-add-request-complexity" name="complexity">
+          <option value="10">🟢 Низкая</option>
+          <option value="20">🟠 Средняя</option>
+          <option value="30">🔴 Высокая</option>
+      </select>
+
+      <div class="app-modal__controls">
+        <button type="button" class="app-modal__btn modal-ok-btn">ОК</button>
+        <button type="button" class="app-modal__btn modal-cancel-btn">Отмена</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="app-modal" id="modal-edit-technician">
+    <form class="app-modal__form">
+      <label for="modal-edit-technician-input" class="app-modal__question">
+        ✏️ Отредактируйте имя мастера:
+      </label>
+      <input type="text" class="app-modal__input" id="modal-edit-technician-input"/> 
+      <div class="app-modal__controls">
+        <button type="button" class="app-modal__btn modal-ok-btn">ОК</button>
+        <button type="button" class="app-modal__btn modal-cancel-btn">Отмена</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="app-modal" id="modal-delete-technician">
+    <form class="app-modal__form">
+      <label class="app-modal__question">
+        🗑️ Вы уверены, что хотите удалить этого мастера?
+      </label>
+      <div class="app-modal__controls">
+        <button type="button" class="app-modal__btn modal-ok-btn">Да, удалить</button>
+        <button type="button" class="app-modal__btn modal-cancel-btn">Отмена</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="app-modal" id="modal-delete-request">
+    <form class="app-modal__form">
+      <label class="app-modal__question">
+        🗑️ Вы уверены, что хотите удалить эту заявку?
+      </label>
+      <div class="app-modal__controls">
+        <button type="button" class="app-modal__btn modal-ok-btn">Да, удалить</button>
+        <button type="button" class="app-modal__btn modal-cancel-btn">Отмена</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="app-notifications-modal" id="app-notifications"></dialog>
+
+</body>
+</html>
